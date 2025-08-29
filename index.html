@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栃木ポケカコミュニティ</title>
+    <meta name="description" content="このホームページは、HTMLとCSS、Javascriptを使ったサンプルサイトです。基本的なHTMLタグ打ちの練習用として作成されました。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo2.png" type="image/x-icon">
+</head>
+<body>
+    <!-- ロゴとヘッダーメニュー -->
+    <header>
+        <div id="logo">
+            <img src="img/logo.png" alt="HTMLサンプルサイト">
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul id="menu">
+                <li><a href=event.html>EVENT</a></li>
+                <li><a href="index.html#organizer">ORGANIZER</a></li>
+                <li><a href="#flow">イベント参加までの流れ</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- ファーストビュー -->
+    <section id="first-view">
+        <h1>栃木で繋がる、広がる</h1>
+        <p>始めたての方も実力者も全員が楽しめる場所</p>
+        <a href="https://www.pokemon-card.com/" class="fv-button"target="_blank"rel="noopener noreferrer">公式ホームページはこちら</a>
+        <a href="event.html" class="fv-button fv-button-secondary">イベント一覧を見る</a>
+    </section>
+
+    <section id="slideshow">
+    <div class="slider">
+        <div class="slide"><a href="https://www.pokemon-card.com/info/005175.html"target="_blank"rel="noopener noreferrer"><img src="https://www.pokemon-card.com/assets/images/index/slides/b6a39de785724f87bb5a68ff4e6b6ef1.jpg" alt="スライド1"></a></div>
+        <div class="slide"><a href="https://www.pokemoncenter-online.com/"target="_blank"rel="noopener noreferrer"><img src="https://assets-ap-northeast-1.queue-it.net/pol/userdata/v1/assets/logo.png" alt="スライド2"></a></div>
+        <div class="slide"><a href="https://x.com/putitochi"target="_blank"rel="noopener noreferrer"><img src="https://pbs.twimg.com/media/GyjGDnVaMAIkT6S?format=jpg&name=large" alt="スライド3"></a></div>
+    </div> <button id="prev-slide" class="slide-button">＜</button>
+    <button id="next-slide" class="slide-button">＞</button>
+        <div id="slide-indicator"></div> 
+    </section>
+
+    <!-- お悩みセクション -->
+    <section id="problems">
+        <h2>こんなイベントがあります！</h2>
+        <div class="problem-grid">
+            <div class="problem-item">
+                <img src="img/check.png" alt="チェックアイコン" class="problem-image">
+                <p>始めたての人向けのティーチングイベント</p>
+            </div>
+            <div class="problem-item">
+                <img src="img/check.png" alt="チェックアイコン" class="problem-image">
+                <p>自分の実力を試すフリー対戦形式イベント</p>
+            </div>
+            <div class="problem-item">
+                <img src="img/check.png" alt="チェックアイコン" class="problem-image">
+                <p>実力者が集う、優勝をかけて戦うイベント</p>
+            </div>
+        </div>
+    </section>
+
+<section id="cta"> <div class="container">
+            <a href="event.html" class="btn-primary">
+                イベント一覧はこちら！
+                <img src="https://learn-book.com/wp-content/uploads/2023/12/image-222.png" alt="" class="btn-icon">
+            </a>
+        </div>
+    </section>
+
+    <!-- 約束セクション -->
+     <section id="organizer">
+        <h2>どんなオーガナイザー（主催）がいるの？</h2>
+        </section>
+    
+
+    <!-- 特徴セクション -->
+    <section id="features">
+        <h2>オーガナイザー一覧</h2>
+        <p>イベントを開いているオーガナイザーを掲載してます。オーガナイザー資格がないけど大会を開いている方も掲載します</p>
+        <div class="feature-grid">
+            <div class="feature-item fade-in"> 
+                <div class="feature-item">
+                    <div class="feature-icon">01</div>
+                    <h3>ゲンキ</h3>
+                    <p>旧裏からやっている最古参プレーヤー。自身が開いている甘党の集いは毎回50人ほど集まるほど人気イベント</p>
+                    <a href="organizer_genki.html" class="detail-button"rel="noopener noreferrer"target="_blank">詳細を見る</a>
+                </div>
+            </div>
+            <div class="feature-item fade-in"> 
+                <div class="feature-item">
+                    <div class="feature-icon">02</div>
+                    <h3>にゃんこさん</h3>
+                    <p>ジャッジ資格を有しており実際に大型大会のジャッジをしている。主に初心者向けイベントを開いている</p>
+                    <a href="organizer_nyanko.html" class="detail-button"rel="noopener noreferrer"target="_blank">詳細を見る</a>
+                </div>
+            </div>
+            <div class="feature-item fade-in"> 
+                <div class="feature-item">
+                    <div class="feature-icon">03</div>
+                    <h3>あこ</h3>
+                    <p>女性オーガナイザー、ジャッジ資格持ち。女性限定大会や子供を対象とした大会を開いている</p>
+                    <a href="organizer_ako.html" class="detail-button"target="_blank"rel="noopener noreferrer">詳細を見る</a>
+                </div>
+            </div>
+            <div class="feature-item fade-in"> 
+                <div class="feature-item">
+                    <div class="feature-icon">04</div>
+                    <h3>そふとん</h3>
+                    <p>ティーチングイベントメインで開いている。ジャッジ資格持ちでほかの大会によく見かける。デッキメイクが得意。</p>
+                    <a href="organizer_sofuton.html" class="detail-button"target="_blank"rel="noopener noreferrer">詳細を見る</a>
+                </div>
+            </div>
+            <div class="feature-item fade-in"> 
+                <div class="feature-item">
+                    <div class="feature-icon">05</div>
+                    <h3>炬燵</h3>
+                    <p>最近資格を取ったニュービー。炬燵道場を開いている。その他のイベントも企画中…</p>
+                    <a href="organizer_kotatu.html" class="detail-button"target="_blank"rel="noopener noreferrer">詳細を見る</a>
+                </div>
+            </div>
+            <div class="feature-item fade-in"> 
+                <div class="feature-item">
+                    <div class="feature-icon">06</div>
+                    <h3>ちゃこ</h3>
+                    <p>こちらも最近イベントを主催し始めた方。圧倒的画力と財力で栃木の覇権を狙う</p>
+                    <a href="organizer_chako.html" class="detail-button"target="_blank"rel="noopener noreferrer">詳細を見る</a>
+                </div>
+            </div>
+            <div class="feature-item fade-in"> 
+                <div class="feature-item">
+                    <div class="feature-icon">07</div>
+                    <h3>まあや</h3>
+                    <p>シーズン2019日本一に輝いたプレーヤー。彼が開く大会、練習会はハイレベルなものばかりである</p>
+                    <a href="organizer_maya.html" class="detail-button"target="_blank"rel="noopener noreferrer">詳細を見る</a>
+                    </div>
+                </div>
+            <div class="feature-item fade-in">     
+                <div class="feature-item">
+                    <div class="feature-icon">08</div>
+                    <h3>ともきち</h3>
+                    <p>ジャッジ資格持ちであり、推しポケ杯を始めとしたユニークな大会を数多く開いている。</p>
+                    <a href="organizer_tomokiti.html" class="detail-button"target="_blank"rel="noopener noreferrer">詳細を見る</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 料金セクション -->
+    
+    
+      <!-- お客様の声セクション -->
+    
+
+<section id="flow">
+    <h2>イベント参加までの流れ</h2>
+    <div class="flow-container"> 
+        <div class="flow-step">
+            <h3>事前予約</h3>
+            <p>事前予約がないイベントもあります。イベント詳細ページからしっかり確認しましょう。参加条件や大会のルールをよく読んで予約しましょう。
+                必要なものは基本的にプレイヤーネームと参加費であることがほとんど、稀にトナメルというサイトを使って大会運営をする場合がある</p>
+            <p><a href="https://tonamel.com/"target="_blank"rel="noopener noreferrer">tonamelはこちら</a></p>    
+        </div>
+        <div class="flow-step">
+            <h3>受付</h3>
+            <p>公式の大会であればトレーナーズクラブで、自主大会や非公認では名簿に記入するものもあれば、前述のトナメルなどを使う場合がある</p>
+        </div>
+        <div class="flow-step">
+            <h3>試合！</h3>
+            <p>主催の説明を聞き、楽しく大会に参加しましょう！</p>
+        </div>
+    </div>
+    </section>
+
+
+     <!-- F&Qセクション -->
+     <section id="faq">
+        <h2>FAQ</h2>
+        <dl>
+            <dt>Q: 参加費はありますか？</dt>
+            <dd>A: 大会によって異なります。主催に問い合わせるかイベント詳細ページを確認してください。</dd>
+        
+            <dt>Q: どうやってデッキを作ってますか？</dt>
+            <dd>A: ネットからの情報や、知り合いにレシピを教えてもらう。スタートデッキを改造するなど様々な方法があります。
+                カード自体はカードショップでのシングル購入であったりパックからあてたカードを使うのが一般的です</dd>
+        
+            <dt>Q: 未就学児でも大会に参加できますか？</dt>
+            <dd>A: 特別禁止の文言がなければ可能です。年長で日本代表になった人もいます。</dd>
+        
+            <dt>Q: サービス提供後のサポートはありますか？</dt>
+            <dd>A: はい、納品後もアフターサポートを提供しております。</dd>
+        
+        </dl>
+        
+    </section>
+    
+
+
+    
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2024 HTMLサンプルサイト All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
