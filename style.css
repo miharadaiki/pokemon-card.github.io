@@ -1,0 +1,985 @@
+/* 全体のスタイル */
+body {
+    font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダー */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 他の要素の上に表示するため */
+}
+
+
+
+header #logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* ハンバーガーメニューのスタイル */
+.hamburger {
+    font-size: 0;
+    position: absolute; /* 絶対位置で配置 */
+    top: 10px; /* ヘッダーの上からの距離を調整 */
+    right: 50px; /* 右端からの距離を調整 */
+    width: 40px;
+    height: 20px;
+    display: none; /* デフォルトでは非表示 */
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+
+/* モバイル表示 */
+@media (max-width: 768px) {
+    /* モバイルではロゴを左端に */
+    header #logo {
+        margin-right: auto; /* ロゴを左端に固定 */
+    }
+    
+    /* 通常のメニューを非表示にする */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        background-color: #444;
+        width: 100%;
+    }
+
+    header nav ul.active {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+    }
+
+    /* ハンバーガーメニューをモバイル時に表示する */
+    .hamburger {
+        display: block;
+    }
+
+}
+
+
+
+/* ファーストビュー */
+#first-view {
+    /* background-colorを削除し、以下の5行を追加 */
+    background-color: #007bff;
+    background-image: url('img/画像3.png'); /* ← ご自身の画像パスに変更 */
+    background-size: cover; /* 画像を画面いっぱいに表示 */
+    background-position: center; /* 画像の中央を表示 */
+    position: relative; /* オーバーレイを重ねるために必要 */
+    z-index: 1; /* オーバーレイの基準とするため */
+
+    color: #ffffff;
+    text-align: center;
+    padding: 0 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 画像の上に半透明の黒いフィルターをかけて文字を読みやすくする（推奨） */
+#first-view::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 40%の黒色フィルター */
+    z-index: -1; /* 文字の下に配置 */
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    #first-view h1 {
+        font-size: 2.5rem; /* 小さく調整 */
+    }
+
+    #first-view p {
+        font-size: 1.2rem; /* 小さく調整 */
+    }
+}
+
+.fv-button {
+    background-color: #32CD32;
+    color: #fff;
+    padding: 15px 40px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.fv-button:hover {
+    background-color: #2E8B57;
+}
+/* --- トップページボタン複数設置のためのスタイル --- */
+
+/* ボタンコンテナのスタイル */
+.fv-buttons-container {
+    display: flex; /* ボタンを横並びにする */
+    flex-wrap: wrap; /* 画面が狭くなったら折り返す */
+    justify-content: center; /* ボタンを中央に寄せる */
+    gap: 20px; /* ボタン同士の間隔 */
+    margin-top: 30px; /* ファーストビューのテキストとの間隔 */
+    width: 100%; /* 親の#first-viewの幅いっぱいに広げる */
+    max-width: 600px; /* ボタン群の最大幅を設定し、広がりすぎを防ぐ */
+    box-sizing: border-box; /* パディングを含めて幅を計算 */
+}
+
+/* 2つ目のボタンのスタイル（例: 背景色を白、文字色を青に） */
+.fv-button-secondary {
+    background-color: #fff; /* 白い背景 */
+    color: #005f99; /* 青い文字色 */
+    border: 2px solid #005f99; /* 青い枠線 */
+}
+
+.fv-button-secondary:hover {
+    background-color: #f0f0f0; /* ホバーで少し色を変える */
+    color: #004a7a;
+    border-color: #004a7a;
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    .fv-buttons-container {
+        flex-direction: column; /* 縦並びにする */
+        align-items: center; /* 中央揃えにする */
+        gap: 15px; /* ボタン同士の間隔を少し小さく */
+    }
+
+    .fv-button {
+        width: 80%; /* モバイルでボタンの幅を調整 */
+        max-width: 300px; /* 最大幅を設定して大きくなりすぎないように */
+        padding: 15px 0; /* 左右のパディングを0にして中央揃えを活かす */
+    }
+}
+/*スライドショー*/
+/* スライドショーのサイズ調整 */
+/* --- スライドショーのスタイル（修正版まとめ） --- */
+
+/* スライドショー全体のコンテナ */
+#slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background-color: #f0f0f0;
+    /* 下の要素とのかぶりを防ぐための余白 */
+    margin-bottom: 60px;
+}
+
+/* スライドを動かすためのラッパー */
+.slider {
+    display: flex;
+    width: 300%; /* スライドが3つの場合 */
+    height: 100%;
+    /* アニメーションを滑らかにする設定 */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: calc(100% / 3);
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* 画像の表示方法を調整 */
+    object-fit: cover;       /* 比率を保ちつつコンテナを埋める */
+    object-position: center; /* 画像の中央を表示する */
+}
+
+/* 左右のボタンやインジケーターのスタイルはこの下に続きます */
+
+
+/* style.cssの末尾などに追加してください */
+
+/* ▼▼▼ 以前の #slide-indicator スタイルは削除してください ▼▼▼ */
+
+/* インジケーター全体のコンテナ */
+#slide-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; /* ドットを横並びにする */
+    align-items: center; /* ドットを中央揃えにする */
+    gap: 12px; /* ドット間のスペース */
+    z-index: 10;
+}
+
+/* 各ドットの基本スタイル */
+.slide-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; /* プログレスバーの基準位置とする */
+    z-index: 2; /* ★追加：ドットがバーより手前に来るようにする */
+}
+
+/* アクティブな（現在の）ドットのスタイル */
+.slide-dot.active {
+    background-color: #e60012; /* ポケモンボール風の赤色 */
+}
+
+/* style.cssに追加 */
+
+/* アニメーション用のCSS変数を定義 */
+@property --progress-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* 各ドットの基本スタイル */
+.slide-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; 
+    z-index: 2;
+}
+
+/* アクティブなドットのスタイル */
+.slide-dot.active {
+    background-color: #e60012; /* 赤色 */
+}
+
+/* プログレスサークル（アクティブなドットの疑似要素として作成） */
+.slide-dot.active::before {
+    content: '';
+    position: absolute;
+    /* ドットより一回り大きく設定 */
+    top: -4px;
+    left: -4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    
+    /* 円形グラデーションでリングを作成（--progress-angleはJSでアニメーション） */
+    background: conic-gradient(
+        #f7f6f6 var(--progress-angle), 
+        transparent var(--progress-angle)
+    );
+
+    /* アニメーションを実行 */
+    animation: circular-progress 5s linear forwards;
+}
+
+/* アニメーションの定義 */
+@keyframes circular-progress {
+    to {
+        --progress-angle: 360deg;
+    }
+}
+
+
+/* 左右のボタン共通スタイル */
+.slide-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.slide-button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 前へボタンの位置 */
+#prev-slide {
+    left: 10px;
+}
+
+/* 次へボタンの位置 */
+#next-slide {
+    right: 10px;
+}
+
+
+/* --- こんなイベントがあります！セクション（新デザイン） --- */
+#problems {
+    text-align: center;
+    padding: 80px 20px; /* 上下の余白を少し調整 */
+    background-color: #f9f9f9; /* 背景色を薄いグレーに */
+}
+
+#problems h2 {
+    font-size: 2.2rem;
+    margin-bottom: 60px; /* カードとの余白を確保 */
+    margin-top: 0; /* 固定ヘッダー用のmarginを削除または調整 */
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    #problems h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+}
+
+.problem-grid {
+    display: flex;
+    justify-content: center; /* 中央寄せに変更 */
+    flex-wrap: wrap;
+    gap: 30px; /* カード間の余白を少し広げる */
+}
+
+/* 各項目のカードスタイル */
+.problem-item {
+    background-color: #fff; /* カードの背景を白に */
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* 影をつけて立体感を出す */
+    padding: 30px 25px; /* カードの内側の余白 */
+    flex: 1;
+    max-width: 320px; /* カードの最大幅 */
+    min-width: 280px; /* カードの最小幅 */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+}
+
+/* カードのホバーエフェクト */
+.problem-item:hover {
+    transform: translateY(-8px); /* 少し上に浮き上がる動き */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* 影を濃くする */
+}
+
+/* アイコン画像のスタイル */
+.problem-image {
+    width: 60px; /* サイズを少し大きく */
+    height: 60px;
+    margin-bottom: 20px; /* アイコンとテキストの間隔 */
+    background-color: #005f99; /* アイコンの背景色 */
+    border-radius: 50%; /* 円形にする */
+    padding: 15px; /* 円の中に余白を作る */
+    box-sizing: border-box; /* paddingを含めてサイズを計算 */
+}
+
+/* テキストのスタイル */
+.problem-item p {
+    font-size: 1.1rem;
+    color: #333; /* 文字色を濃くして読みやすく */
+    font-weight: 500; /* 少し太くする */
+    margin: 0; /* 不要な余白をリセット */
+}
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    #problems h2 {
+        font-size: 1.5rem; /* フォントサイズを小さく */
+        margin-bottom: 30px; /* 必要に応じてマージンも調整 */
+    }
+}
+
+.problem-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.problem-item {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.problem-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.problem-item p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    /* 特徴セクションの縦並び */
+    .problem-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .problem-item {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.event-button-container {
+    text-align: center; /* ボタンを中央に配置 */
+    margin-top: 40px; /* お悩みセクションとの間隔 */
+    margin-bottom: 60px; /* 次のセクションとの間隔 */
+}
+
+.event-button {
+    display: inline-block; /* パディングや幅を適用するためにインラインブロックに */
+    background-color: #007bff; /* ボタンの背景色（青系の例） */
+    color: #fff; /* 文字色 */
+    padding: 15px 40px; /* 内側の余白 */
+    border-radius: 5px; /* 角を丸くする */
+    text-decoration: none; /* 下線をなくす */
+    font-size: 1.2rem; /* 文字サイズ */
+    font-weight: bold; /* 文字を太く */
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.event-button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    .event-button {
+        padding: 12px 30px; /* モバイルでのパディングを調整 */
+        font-size: 1rem; /* モバイルでの文字サイズを調整 */
+    }
+}
+
+/* 約束セクション */
+#organizer {
+    position: relative;
+    padding: 60px 20px;
+    margin-top: 64px;
+    background-color: #005f99;
+    text-align: center;
+}
+
+/* ▽を作成 */
+#organizer::before {
+    content: "";
+    position: absolute;
+    bottom: -20px; /* ボックスの上に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #005f99; /* 三角形の色を背景と同じに */
+}
+
+#organizer h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    #aaa h2 {
+        font-size: 1.5rem; /* フォントサイズを小さく */
+        margin-bottom: 10px; /* 必要に応じてマージンも調整 */
+    }
+}
+
+/* 特徴セクション */
+#features {
+    text-align: center;
+    padding: 60px 60px;
+    background-color: #ffffff;
+}
+
+#features h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    margin-top: 96px;
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    #features h2 {
+        font-size: 1.5rem; /* フォントサイズを小さく */
+        margin-bottom: 30px; /* 必要に応じてマージンも調整 */
+    }
+}
+
+#features p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* オーガナイザー一覧の親要素（コンテナ） */
+.feature-grid {
+    display: flex; 
+    justify-content: space-around;
+    /* ▼▼▼ ここを flex-start から stretch に変更 ▼▼▼ */
+    align-items: stretch; /* カードの高さを一番高いものに揃える */
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+/* オーガナイザーの各項目 */
+.feature-item {
+    /* 横幅の基準を指定（3項目なので33%より少し小さい値）*/
+    flex-basis: 30%; 
+
+    /* ★★★これが一番重要★★★ */
+    /* 文章が長くなった時に、単語の途中でも改行する */
+    word-break: break-all;
+
+    /* ▼▼▼ ここから追加・変更 ▼▼▼ */
+    background-color: #fff; /* カードの背景色を白に */
+    border: 1px solid #e0e0e0; /* 薄いグレーの枠線を追加 */
+    border-radius: 8px; /* 角を少し丸くする */
+    padding: 20px; /* カードの内側に余白を持たせる */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* ほんのり影をつけて立体感を出す */
+    display: flex; /* Flexboxを有効にして中の要素を管理 */
+    flex-direction: column; /* 要素を縦に並べる */
+    height: 100%; /* 高さを揃える（gridのalign-items:stretchと連携） */
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #005f99;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #666;
+}
+/* スクロールで表示するための初期設定 */
+.fade-in {
+    opacity: 0; /* 最初は透明 */
+    transform: translateY(20px); /* 少し下に配置 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 画面内に入ったときに適用するクラス */
+.fade-in.visible {
+    opacity: 1; /* 不透明にする */
+    transform: translateY(0); /* 元の位置に戻す */
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    /* 特徴セクションの縦並び */
+    .feature-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* 詳細を見るボタンのスタイル */
+.detail-button {
+    display: inline-block; /* パディングや幅を適用するためにインラインブロックに */
+    background-color: #007bff; /* 青系の背景色 */
+    color: #fff; /* 文字色 */
+    padding: 8px 20px; /* 内側の余白 */
+    margin-top: 15px; /* 上の段落との間隔 */
+    border-radius: 5px; /* 角を丸くする */
+    text-decoration: none; /* 下線をなくす */
+    font-size: 0.9rem; /* 文字サイズを少し小さめに */
+    font-weight: bold; /* 文字を太く */
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.detail-button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .detail-button {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ボタンのホバーエフェクト */
+.fv-button, .event-button, .detail-button {
+    /* 変化をスムーズにするための設定（0.3秒かけて変化） */
+    transition: transform 0.3s ease;
+}
+
+.fv-button:hover, .event-button:hover, .detail-button:hover {
+    /* マウスが乗った時に少しだけ拡大する */
+    transform: scale(1.05);
+}
+
+
+/* 料金セクション */
+
+
+
+
+/* ご利用の流れセクション */
+#flow {
+    padding: 60px 60px;
+    background-color: #f9f9f9;
+    margin-top: 64px;
+}
+
+#flow h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* モバイル対応（画面幅768px以下の場合） */
+@media (max-width: 768px) {
+    #flow h2 {
+        font-size: 1.5rem; /* フォントサイズを小さく */
+        margin-bottom: 30px; /* 必要に応じてマージンも調整 */
+    }
+}
+
+/* --- ご利用の流れセクション（新デザイン） --- */
+
+/* ステップ全体を囲むコンテナ */
+.flow-container {
+    max-width: 900px; /* 最大幅を指定 */
+    margin: 0 auto; /* 中央寄せ */
+    position: relative;
+}
+
+/* 各ステップのカードスタイル */
+.flow-step {
+    background-color: #fff; /* 背景を白に */
+    border: 1px solid #e0e0e0; /* 薄い枠線 */
+    border-radius: 8px; /* 角を丸くする */
+    padding: 25px; /* 内側の余白 */
+    padding-left: 50px; /* 番号表示のため左側に余分に余白 */
+    margin-bottom: 25px; /* カード間の余白 */
+    position: relative; /* 番号を配置する基準位置 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 影をつける */
+    counter-increment: flow-counter; /* ステップ番号を1つ増やす */
+}
+
+/* ステップ番号のスタイル */
+.flow-step::before {
+    content: counter(flow-counter); /* 番号を表示 */
+    position: absolute;
+    left: -20px;
+    top: 25px;
+    width: 40px;
+    height: 40px;
+    background-color: #005f99; /* アクセントカラー */
+    color: #fff;
+    border-radius: 50%; /* 円形にする */
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* ステップの見出し */
+.flow-step h3 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #005f99;
+}
+
+/* ステップの説明文 */
+.flow-step p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.flow-step p:last-child {
+    margin-bottom: 0;
+}
+
+/* ステップ間の縦線（任意） */
+.flow-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 45px;
+    bottom: 45px;
+    width: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+}
+
+/* モバイル表示用の調整 */
+@media (max-width: 768px) {
+    #flow {
+        padding: 60px 20px; /* 左右の余白を調整 */
+    }
+
+    .flow-step {
+        padding: 20px;
+        padding-left: 20px; /* 番号を内側に配置するため調整 */
+    }
+
+    .flow-step::before {
+        left: 15px;
+        top: -20px; /* 番号をカードの上に配置 */
+    }
+
+    .flow-container::before {
+        display: none; /* モバイルでは縦線を非表示に */
+    }
+}
+
+
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top:0;
+}
+
+footer p {
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+  }
+
+/* トップへ戻るボタン */
+.page_top_btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-weight: bold;
+    padding: 0.7em;
+    text-align: center;
+    background: rgb(0, 183, 255);
+    color: #fff;
+    transition: 0.3s0;
+    }
+    
+    /* マウスオーバー時 */
+    .page_top_btn:hover {
+    background: rgba(0, 47, 255, 0.8);
+    color: rgb(255, 255, 255, 0.8);
+    }
+    /* --- FAQセクション（アコーディオンデザイン） --- */
+
+#faq {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* 背景色を薄いグレーに */
+}
+
+#faq h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
+/* FAQリスト全体 */
+#faq dl {
+    max-width: 800px; /* 最大幅を指定 */
+    margin: 0 auto; /* 中央寄せ */
+    border-top: 1px solid #ddd;
+}
+
+/* 質問（dt）のスタイル */
+#faq dt {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer; /* クリックできることを示す */
+    position: relative; /* アイコンを配置する基準 */
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+#faq dt:hover {
+    background-color: #f5f5f5;
+}
+
+/* 質問の前の「Q」アイコン */
+#faq dt::before {
+    content: 'Q';
+    font-weight: bold;
+    color: #005f99;
+    margin-right: 15px;
+}
+
+/* 質問の右端の「＋」「－」アイコン */
+#faq dt::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #888;
+    transition: transform 0.3s ease;
+}
+
+/* activeクラスがついた質問の「－」アイコン */
+#faq dt.active::after {
+    transform: translateY(-50%) rotate(45deg); /* 「＋」を45度回転させて「×」のように見せる */
+}
+
+
+/* 回答（dd）のスタイル */
+#faq dd {
+    margin: 0; /* デフォルトのマージンをリセット */
+    padding: 20px;
+    padding-left: 55px; /* 「A」アイコンの位置と合わせる */
+    font-size: 1rem;
+    color: #555;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid #ddd;
+
+    /* ★普段は回答を隠しておくための設定 */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+/* 回答の前の「A」アイコン */
+#faq dd::before {
+    content: 'A';
+    font-weight: bold;
+    color: #c00; /* 赤色 */
+    margin-right: 15px;
+    float: left; /* 左側に浮かせる */
+}
+
+/* activeクラスがついた回答（表示状態） */
+#faq dd.active {
+    max-height: 500px; /* 十分な高さを確保して表示 */
+    opacity: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/* --- ボタンとアイコンの調整 --- */
+#hero .btn-primary {
+    display: inline-flex; /* テキストとアイコンを横並びにする */
+    align-items: center; /* 上下中央に揃える */
+    justify-content: center; /* 左右中央に揃える */
+}
+
+.btn-icon {
+    margin-left: 10px; /* テキストとアイコンの間の余白 */
+    height: 1em; /* アイコンの高さを文字の高さと合わせる */
+    width: auto; /* 幅は自動調整 */
+}
+/* --- CTA(行動喚起)セクション --- */
+#cta {
+    background-color: #007bff; /* 青い背景色 */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* CTAセクション内のボタンのスタイルを上書き */
+#cta .btn-primary {
+    background-color: transparent; /* 背景を透明に */
+    color: #fff;                  /* 文字色を白に */
+    border: 2px solid #fff;        /* 白い枠線をつける */
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;         /* 下線を消す */
+    border-radius: 5px;
+    transition: all 0.3s ease;     /* ホバー時のアニメーション */
+}
+
+/* ボタンにカーソルを合わせた時のスタイル */
+#cta .btn-primary:hover {
+    background-color: #fff;        /* 背景を白に */
+    color: #007bff;                /* 文字色を青に */
+}
+
+/* アイコンの位置調整（前回と同じ） */
+#cta .btn-primary .btn-icon {
+    margin-left: 10px;
+    height: 1em;
+}
