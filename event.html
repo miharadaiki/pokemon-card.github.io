@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLサンプルサイト</title>
+    <meta name="description" content="このホームページは、HTMLとCSS、Javascriptを使ったサンプルサイトです。基本的なHTMLタグ打ちの練習用として作成されました。">
+    <link rel="stylesheet" href="event.css">
+    <link rel="icon" href="img/logo2.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="img/logo.png" alt="HTMLサンプルサイト">
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="event.html">EVENT</a></li>
+                <li><a href="index.html#flow">参加までの流れ</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <a href="amatou.html">【毎週土日】甘党の集い 開催中！</a>
+            <a href="pokecajuku.html">【不定期水曜】放課後ポケカ塾で友達と対戦！</a>
+            <a href="zanpoke.html">【毎週火曜】残業上がりでもポケカしたい！「残ポケ」</a>
+            <a href="LZS.html">【毎月週末】Light-Zing Scrim　受付チュウ！</a>
+            
+            <a href="amatou.html">【毎週土日】甘党の集い 開催中！</a>
+            <a href="pokecajuku.html">【不定期水曜】放課後ポケカ塾で友達と対戦！</a>
+            <a href="zanpoke.html">【毎週火曜】残業上がりでもポケカしたい！「残ポケ」</a>
+            <a href="LZS.html">【毎月週末】Light-Zing Scrim　受付チュウ！</a>
+        </div>
+    </div>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>あなたの「好き」が見つかるイベント情報サイト</h1>
+            <p>初心者から上級者、子供から大人まで<br>魅力的なイベントがあなたを待っています！</p>
+            <a href="#event-list" class="btn-primary">最新イベントを見る</a>
+        </div>
+    </section>
+
+   <section id="event-list">
+    <div class="container">
+        <h2>開催中のイベント</h2>
+        <div class="event-cards">
+
+            <div class="event-card">
+                <div class="event-content">
+                    <h3>甘党の集い</h3>
+                    <p class="event-meta">
+                        <span class="event-date">毎週土日</span> | 
+                        <span class="event-location">東柳瀬、テクノTSUTAYA等</span>
+                    </p>
+                    <p class="event-description">初心者から実力者まで！勝ち数を競う自主大会！</p>
+                    <a href="amatou.html" class="btn-secondary">詳細を見る</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-content">
+                    <h3>放課後ポケカ塾</h3>
+                    <p class="event-meta">
+                        <span class="event-date">不定期水曜15時～</span> | 
+                        <span class="event-location">東柳瀬TSUTAYA</span>
+                    </p>
+                    <p class="event-description">学校帰り、ポケカしたい人が集まるイベント</p>
+                    <a href="pokecajuku.html" class="btn-secondary">詳細を見る</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-content">
+                    <h3>残ポケ～残業上がりでもポケカしたい！～</h3>
+                    <p class="event-meta">
+                        <span class="event-date">毎週火曜日</span> | 
+                        <span class="event-location">作新TSUTAYAトレカスペース</span>
+                    </p>
+                    <p class="event-description">社会人のための夜ポケカ（18歳未満は保護者同伴）</p>
+                    <a href="zanpoke.html" class="btn-secondary">詳細を見る</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-content">
+                    <h3>Light-Zing Scrim（ライジンスクリム）</h3>
+                    <p class="event-meta">
+                        <span class="event-date">月1開催</span> | 
+                        <span class="event-location">東柳瀬,テクノTSUTAYAトレカスペース</span>
+                    </p>
+                    <p class="event-description">大型大会の予行練習。宇都宮トップレベルの練習場</p>
+                    <a href="LZS.html" class="btn-secondary">詳細を見る</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    <section id="calendar">
+        <div class="container">
+            <h2>イベントカレンダー</h2>
+            <p>Googleカレンダーで最新のイベント日程を確認できます。</p>
+            
+            <div class="calendar-wrapper">
+                <iframe src="https://calendar.google.com/calendar/embed?src=f0cbfe86e3147fb897c9e3dec350ed7f86ae888db264fb658f6228544afa5486%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
