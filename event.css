@@ -1,0 +1,348 @@
+/* --- 全体的な設定 --- */
+body {
+    font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8; /* 全体の背景色を少し明るく */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px; /* コンテンツの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右の余白 */
+}
+
+/* --- ボタンの共通スタイル --- */
+.btn-primary, .btn-secondary, .btn-ghost {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.btn-primary {
+    background-color: #4A90E2; /* 青系のアクセントカラー */
+    color: #fff;
+    border: 2px solid #4A90E2;
+}
+
+.btn-primary:hover {
+    background-color: #357ABD;
+    border-color: #357ABD;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: #4A90E2; /* 青系のアクセントカラー */
+    border: 1px solid #4A90E2;
+}
+
+.btn-ghost:hover {
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+
+/* --- ヘッダー（色を反転） --- */
+header {
+    background-color: #333; /* 背景色を濃いグレーに */
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を少し濃く */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#logo img {
+    height: 50px; /* ロゴの高さ */
+    /* もしロゴが黒文字の場合は、白文字のロゴ画像に差し替えることを検討してください */
+    /* 例: filter: invert(100%); を適用すると色を反転できますが、画像全体に適用されるため注意 */
+}
+
+/* ナビゲーションメニューのスタイル */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* 文字色を白に */
+    padding: 10px 15px;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4A90E2; /* 青系のホバー時の色（これはそのまま） */
+}
+
+/* ハンバーガーメニュー（モバイル用、ここでは非表示） */
+.hamburger {
+    display: none; /* デスクトップでは非表示 */
+}
+#logo img {
+    height: 50px; /* ロゴの高さ */
+}
+
+/* --- ヒーローセクション（メインビジュアル） --- */
+/* --- ヒーローセクション（メインビジュアル） --- */
+#hero {
+    background-image: url('img/画像1.png'); /* 背景画像を設定（ご自身の画像パスに変更） */
+    background-size: cover; /* 画像をセクション全体に表示 */
+    background-position: center;
+    color: #fff; /* テキスト色を白に */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* 子要素がはみ出さないように */
+    
+    /* ▼▼▼ ここから変更 ▼▼▼ */
+    /* 高さを「画面全体の高さ(100vh)」から「ヘッダーと帯の高さ」を引いたサイズに設定 */
+    min-height: calc(100vh - 128px); /* ※128pxはヘッダーと帯の合計高さの目安です */
+
+    /* 中のコンテンツ(.hero-content)を上下左右の中央に配置するためにFlexboxを使用 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 上下の大きな余白は不要になるので、左右の余白だけ残す */
+    padding: 20px; 
+}
+
+#hero::before { /* オーバーレイで文字を見やすく */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒 */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* オーバーレイより手前に表示 */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#hero h1 {
+    font-size: 3.5em; /* 大きな見出し */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* 文字に影をつけて視認性アップ */
+}
+
+#hero p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#hero .btn-primary {
+    font-size: 1.2em;
+    padding: 15px 40px;
+}
+
+/* --- イベント一覧セクション --- */
+/* --- イベント一覧セクション（新デザイン / 画像なし） --- */
+/* --- イベント一覧セクション（最終修正版） --- */
+#event-list {
+    padding: 80px 20px; /* 左右の余白を少し確保 */
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+#event-list h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+#event-list h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #4A90E2;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: stretch; /* 高さを揃える */
+}
+
+/* --- 各イベントカードのスタイル --- */
+.event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* カード左の色の帯 */
+.event-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 100%;
+}
+
+/* カードごとに色を自動で変える */
+.event-card:nth-child(4n+1)::before { background-color: #4A90E2; } /* 青 */
+.event-card:nth-child(4n+2)::before { background-color: #34A853; } /* 緑 */
+.event-card:nth-child(4n+3)::before { background-color: #EA4335; } /* 赤 */
+.event-card:nth-child(4n+4)::before { background-color: #FBBC05; } /* 黄 */
+
+/* カードのコンテンツ部分 */
+.event-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* カード全体の高さを埋める */
+    
+    /* ★★★これが重要★★★ */
+    margin-left: 10px; /* 帯の幅だけマージンを確保 */
+    padding: 30px 30px 30px 20px; /* 内側の余白（左だけ少し小さめ） */
+    box-sizing: border-box; /* paddingとwidthの計算を調整 */
+}
+
+.event-content h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.event-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.event-description {
+    font-size: 1em;
+    margin-bottom: 25px;
+    flex-grow: 1; /* この要素を伸ばしてボタンを一番下に配置 */
+}
+
+.event-content .btn-secondary {
+    align-self: flex-start;
+    margin-top: auto;
+}
+/* 詳細を見るボタン */
+.event-content .btn-secondary {
+    align-self: flex-start;
+    margin-top: auto; /* 自動で上に余白を作り一番下に配置 */
+}
+/* ... 続くイベントカードのスタイル ... */
+/* --- 動く帯（マーキー） --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #222; /* ヘッダーの色に合わせて濃いグレーに */
+    padding: 12px 0;
+    border-bottom: 1px solid #444;
+}
+
+/* 動かす要素全体を囲むラッパー */
+.marquee-content {
+    display: flex;
+    width: fit-content;
+    animation: marquee 25s linear infinite;
+}
+
+/* 動かす個々の要素 */
+.marquee-content a {
+    display: block;
+    margin: 0 20px;
+    flex-shrink: 0;
+    color: #fff; /* 文字色を白に */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.marquee-content a:hover {
+    color: #4A90E2; /* ホバー時の色をアクセントカラーに */
+}
+
+/* アニメーションの定義 */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* マウスが乗ったら動きを止める */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+/* --- イベントカレンダー --- */
+#calendar {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* 背景色を少し変える */
+    text-align: center;
+}
+
+.calendar-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* iframeのアスペクト比を維持 (高さ/幅 * 100) */
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.calendar-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd; /* カレンダーに枠線をつける */
+}
