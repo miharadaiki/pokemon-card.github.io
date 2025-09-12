@@ -105,7 +105,7 @@ header nav ul li a:hover {
 #first-view {
     /* background-colorを削除し、以下の5行を追加 */
     background-color: #007bff;
-    background-image: url('../gazo1.jpg'); /* ← ご自身の画像パスに変更 */
+    background-image: url('gazo1.jpg'); /* ← ご自身の画像パスに変更 */
     background-size: cover; /* 画像を画面いっぱいに表示 */
     background-position: center; /* 画像の中央を表示 */
     position: relative; /* オーバーレイを重ねるために必要 */
