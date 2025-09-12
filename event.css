@@ -108,7 +108,7 @@ nav ul li a:hover {
 /* --- ヒーローセクション（メインビジュアル） --- */
 /* --- ヒーローセクション（メインビジュアル） --- */
 #hero {
-    background-image: url('img/画像1.png'); /* 背景画像を設定（ご自身の画像パスに変更） */
+    background-image: url('gazo1.png'); /* 背景画像を設定（ご自身の画像パスに変更） */
     background-size: cover; /* 画像をセクション全体に表示 */
     background-position: center;
     color: #fff; /* テキスト色を白に */
