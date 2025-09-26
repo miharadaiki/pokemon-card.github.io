@@ -346,3 +346,25 @@ nav ul li a:hover {
     height: 100%;
     border: 1px solid #ddd; /* カレンダーに枠線をつける */
 }
+/* --- イベントタグのスタイル --- */
+.event-tags {
+    margin-bottom: 20px; /* ボタンとの間隔を調整 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* タグ同士の間隔 */
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 15px; /* 角を丸くしてカプセル状に */
+    color: #fff;
+}
+
+/* タグごとの色分け（例） */
+.tag-beginner { background-color: #34A853; } /* 緑: 初心者歓迎 */
+.tag-advanced { background-color: #EA4335; } /* 赤: 上級者向け */
+.tag-free-battle { background-color: #4A90E2; } /* 青: フリー対戦 */
+.tag-tournament { background-color: #795548; } /* 茶: 大会形式 */
