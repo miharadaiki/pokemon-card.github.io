@@ -596,6 +596,12 @@ header nav ul li a:hover {
     display: flex; /* Flexboxを有効にして中の要素を管理 */
     flex-direction: column; /* 要素を縦に並べる */
     height: 100%; /* 高さを揃える（gridのalign-items:stretchと連携） */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.feature-item:hover {
+    transform: translateY(-5px); /* カードを5px上に移動させる */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 影を少し濃くする */
 }
 
 .feature-icon {
