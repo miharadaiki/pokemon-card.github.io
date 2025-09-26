@@ -1,6 +1,10 @@
+/* style.css */
+
 /* 全体のスタイル */
 body {
-    font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    /* ↓↓↓ この一行を丸ごと書き換えるか、追加する ↓↓↓ */
+    font-family: 'Noto Sans JP', sans-serif;
+
     line-height: 1.6;
     margin: 0;
     padding: 0;
