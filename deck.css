@@ -1,7 +1,7 @@
 /* --- 全体のスタイル --- */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f0f4f8; /* 背景を少し青みがかったグレーに変更 */
+    background-color: #f0f4f8;
     color: #333;
     margin: 0;
     padding: 20px;
@@ -13,14 +13,13 @@ body {
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-     margin-top: 80px; /* ★★★ この一行を追加 ★★★ */
+    margin-top: 80px;
 }
 
-/* --- ★★★ ここから変更 ★★★ --- */
 h1 {
-    border-bottom: 3px solid #FFCB05; /* ポケモンイエローの太い線に変更 */
+    border-bottom: 3px solid #FFCB05;
     padding-bottom: 10px;
-    color: #2A75BB; /* ポケモンブルーの文字色に変更 */
+    color: #2A75BB;
     text-align: center;
 }
 .intro-text {
@@ -29,8 +28,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* --- デッキ紹介のセクション --- */
-/* --- デッキ紹介のセクション --- */
 /* --- デッキ紹介のセクション --- */
 .deck-showcase {
     display: grid;
@@ -79,11 +76,6 @@ h1 {
     margin: 0;
 }
 
-/* ★★★ ここから下を変更 ★★★ */
-
-/* --- 画像の上に表示するオーバーレイのスタイル --- */
-/* ★★★ .overlay-link と .link-icon を中心に修正 ★★★ */
-
 /* --- 画像の上に表示するオーバーレイのスタイル --- */
 .card-overlay {
     position: absolute;
@@ -103,30 +95,28 @@ h1 {
     transform: translateY(0);
 }
 
-/* ★★★ このブロックを丸ごと置き換えてください ★★★ */
-
 .overlay-link {
+    width: 100%; /* 親要素いっぱいに広げる */
     color: #fff;
     text-decoration: none;
-    font-size: 1rem; /* テキストサイズを調整 */
+    font-size: 1rem;
     font-weight: bold;
-    border: 2px solid #fff;
-    padding: 8px 16px; /* 余白を調整 */
-    border-radius: 5px;
+    /* border: 2px solid #fff; ← 枠線はバナーと一体化させるため不要に */
+    padding: 12px 16px; /* 余白を再調整 */
     display: flex;
     align-items: center;
-    justify-content: center; /* 中身を中央揃え */
-    gap: 6px; /* テキストとアイコンの間隔を少し詰める */
+    justify-content: center;
+    gap: 8px; /* アイコンとの間隔を再調整 */
     transition: background-color 0.2s;
-    /* width: auto; /* 幅は自動で決まるようにする */
+    box-sizing: border-box; /* ★★★ これが今回の最も重要な修正点 ★★★ */
 }
 
 .overlay-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #2A75BB;
 }
 
 .link-icon {
     width: 16px;
     height: 16px;
-    flex-shrink: 0; /* ★★★ アイコンが縮まないようにする最重要設定 ★★★ */
+    flex-shrink: 0;
 }
