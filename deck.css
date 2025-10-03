@@ -85,6 +85,7 @@ h1 {
 }
 
 /* --- 画像の上に表示するオーバーレイのスタイル --- */
+/* --- 画像の上に表示するオーバーレイのスタイル --- */
 .card-overlay {
     position: absolute;
     top: 0;
@@ -93,25 +94,49 @@ h1 {
     height: 180px; /* 画像の高さと合わせる */
     background-color: rgba(42, 117, 187, 0.7); /* 半透明の青色 */
     
-    /* テキストを中央に配置 */
-    display: flex;
+    display: flex; /* Flexboxで中身を配置 */
     justify-content: center;
     align-items: center;
     
-    opacity: 0; /* 最初は透明にして隠しておく */
+    opacity: 0;
     transition: opacity 0.3s ease;
-}
-
-.overlay-text {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: 2px solid #fff;
-    padding: 8px 16px;
-    border-radius: 5px;
 }
 
 /* カードにホバーしたときにオーバーレイを表示 */
 .deck-card:hover .card-overlay {
     opacity: 1;
 }
+
+/* ★★★ ここから追記・修正 ★★★ */
+
+.overlay-link {
+    color: #fff;
+    text-decoration: none; /* リンクの下線を削除 */
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    display: flex; /* アイコンとテキストを横並びにする */
+    align-items: center; /* 垂直方向中央揃え */
+    gap: 8px; /* アイコンとテキストの間隔 */
+    transition: background-color 0.2s;
+}
+
+.overlay-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* ホバー時に少し背景色を変える */
+}
+
+.link-icon {
+    width: 20px; /* アイコンのサイズ */
+    height: 20px;
+    filter: invert(1); /* 白いアイコンにする */
+}
+
+/* --- 元の .overlay-text は不要になるため削除または修正 --- */
+/*
+.overlay-text {
+    // このスタイルは .overlay-link に統合されるため、不要になります。
+    // もし残す場合は、.overlay-link の中でのテキストの調整に使うことになります。
+}
+*/
