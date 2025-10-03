@@ -6,12 +6,33 @@
     <title>デッキ紹介ページ</title>
     <meta name="description" content="このホームページは、HTMLとCSS、Javascriptを使ったサンプルサイトです。基本的なHTMLタグ打ちの練習用として作成されました。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="deck.css"><link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="deck.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo2.png" type="image/x-icon">
 </head>
 <body>
+
+    <header>
+        <div id="logo">
+            <img src="logo.png" alt="HTMLサンプルサイト">
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul id="menu">
+                <li><a href="event.html">EVENT</a></li>
+                <li><a href="index.html#organizer">ORGANIZER</a></li>
+                <li><a href="index.html#flow">イベント参加までの流れ</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="deck.html">デッキ構築</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="container">
         <h1>デッキ紹介 🏆</h1>
@@ -34,7 +55,7 @@
             <div class="deck-card">
                 <img src="https://torecacampmedia.com/wp-content/uploads/2025/09/Slide3-768x432.jpg" alt="サーナイトex デッキ">
                 <h3>サーナイトexデッキ</h3>
-                <p>超エネルギーを自在に操り、多彩なアタッカーで戦うテクニカルなデッキです。現在はブルンゲル型と純サナ型がある。</p>
+                <p>超エネルギーを自在に操り、多彩なアッ<br>タッカーで戦うテクニカルなデッキです。現在はブルンゲル型と純サナ型がある。</p>
             </div>
             
             <div class="deck-card">
@@ -58,6 +79,7 @@
         </section>
         <p></p>
     </div>
-
-    </body>
+    
+    <script src="script.js"></script>
+</body>
 </html>
