@@ -112,3 +112,21 @@
         font-size: 2rem;
     }
 }
+
+/* --- スマートフォン表示用の設定 --- */
+@media (max-width: 768px) {
+    .organizer-card {
+        flex-direction: column; /* 要素を縦並びに変更 */
+        align-items: center;   /* 中央揃えにする */
+    }
+
+    .organizer-header {
+        text-align: center; /* テキストを中央揃えに */
+    }
+
+    .organizer-icon {
+        width: 120px; /* アイコンのサイズを少し調整 */
+        height: 120px;
+        margin-bottom: 15px; /* アイコンとテキストの間に余白を追加 */
+    }
+}
