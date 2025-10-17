@@ -692,3 +692,25 @@ html{ scroll-behavior: smooth; }
         padding: 12px 30px;
     }
 }
+/* --- ボタンにアイコンを追加するスタイル --- */
+.detail-button::before {
+    content: '🔍'; /* 虫眼鏡の絵文字 */
+    margin-right: 6px;
+}
+
+.view-events-button::before {
+    content: '📅'; /* カレンダーの絵文字 */
+    margin-right: 6px;
+}
+
+.back-button::before {
+    content: '↩️'; /* 戻る矢印の絵文字 */
+    margin-right: 6px;
+}
+/* --- 現在のページをヘッダーで示すスタイル --- */
+#page-event .nav-event a,
+#page-organizer .nav-organizer a,
+#page-deck .nav-deck a {
+    color: #4A90E2; /* アクティブなメニュー項目の色を青に */
+    font-weight: bold;
+}
