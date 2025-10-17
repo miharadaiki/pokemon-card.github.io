@@ -1,70 +1,53 @@
 /* event.css */
-/* --- 全体的な設定 --- */
 body {
-    /* ↓↓↓ この一行を丸ごと書き換えるか、追加する ↓↓↓ */
     font-family: 'Noto Sans JP', sans-serif;
-    
     line-height: 1.6;
     color: #333;
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
 }
-
 .container {
-    max-width: 1200px; /* コンテンツの最大幅 */
-    margin: 0 auto; /* 中央寄せ */
-    padding: 0 20px; /* 左右の余白 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-/* --- ボタンの共通スタイル --- */
 .btn-primary, .btn-secondary, .btn-ghost {
     display: inline-block;
     padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease; /* ホバー時のアニメーション */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .btn-primary {
-    background-color: #4A90E2; /* 青系のアクセントカラー */
+    background-color: #4A90E2;
     color: #fff;
     border: 2px solid #4A90E2;
 }
-
 .btn-primary:hover {
     background-color: #357ABD;
     border-color: #357ABD;
 }
-
 .btn-secondary {
     background-color: #fff;
     color: #555;
     border: 1px solid #ddd;
 }
-
-.btn-secondary:hover {
-    background-color: #f0f0f0;
-}
-
+.btn-secondary:hover { background-color: #f0f0f0; }
 .btn-ghost {
     background-color: transparent;
-    color: #4A90E2; /* 青系のアクセントカラー */
+    color: #4A90E2;
     border: 1px solid #4A90E2;
 }
-
 .btn-ghost:hover {
     background-color: #4A90E2;
     color: #fff;
 }
-
-
-/* --- ヘッダー（色を反転） --- */
 header {
-    background-color: #333; /* 背景色を濃いグレーに */
+    background-color: #333;
     padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を少し濃く */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,110 +55,76 @@ header {
     top: 0;
     z-index: 1000;
 }
-
-#logo img {
-    height: 50px; /* ロゴの高さ */
-    /* もしロゴが黒文字の場合は、白文字のロゴ画像に差し替えることを検討してください */
-    /* 例: filter: invert(100%); を適用すると色を反転できますが、画像全体に適用されるため注意 */
-}
-
-/* ナビゲーションメニューのスタイル */
+#logo img { height: 50px; }
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
-
 nav ul li a {
     text-decoration: none;
-    color: #fff; /* 文字色を白に */
+    color: #fff;
     padding: 10px 15px;
     display: block;
     font-weight: bold;
     transition: color 0.3s ease;
 }
+nav ul li a:hover { color: #4A90E2; }
+.hamburger { display: none; }
 
-nav ul li a:hover {
-    color: #4A90E2; /* 青系のホバー時の色（これはそのまま） */
-}
-
-/* ハンバーガーメニュー（モバイル用、ここでは非表示） */
-.hamburger {
-    display: none; /* デスクトップでは非表示 */
-}
-#logo img {
-    height: 50px; /* ロゴの高さ */
-}
-
-/* --- ヒーローセクション（メインビジュアル） --- */
-/* --- ヒーローセクション（メインビジュアル） --- */
+/* ヒーローセクション */
 #hero {
-    background-image: url('gazo1.png'); /* 背景画像を設定（ご自身の画像パスに変更） */
-    background-size: cover; /* 画像をセクション全体に表示 */
+    background-image: url('gazo1.png');
+    background-size: cover;
     background-position: center;
-    color: #fff; /* テキスト色を白に */
+    color: #fff;
     text-align: center;
     position: relative;
-    overflow: hidden; /* 子要素がはみ出さないように */
-    
-    /* ▼▼▼ ここから変更 ▼▼▼ */
-    /* 高さを「画面全体の高さ(100vh)」から「ヘッダーと帯の高さ」を引いたサイズに設定 */
-    min-height: calc(100vh - 128px); /* ※128pxはヘッダーと帯の合計高さの目安です */
-
-    /* 中のコンテンツ(.hero-content)を上下左右の中央に配置するためにFlexboxを使用 */
+    overflow: hidden;
+    min-height: calc(100vh - 128px);
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* 上下の大きな余白は不要になるので、左右の余白だけ残す */
     padding: 20px; 
 }
-
-#hero::before { /* オーバーレイで文字を見やすく */
+#hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒 */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
-
 .hero-content {
     position: relative;
-    z-index: 2; /* オーバーレイより手前に表示 */
+    z-index: 2;
     max-width: 800px;
     margin: 0 auto;
 }
-
 #hero h1 {
-    font-size: 3.5em; /* 大きな見出し */
+    font-size: 3.5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* 文字に影をつけて視認性アップ */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
-
 #hero p {
     font-size: 1.4em;
     margin-bottom: 40px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
-
 #hero .btn-primary {
     font-size: 1.2em;
     padding: 15px 40px;
 }
 
-/* --- イベント一覧セクション --- */
-/* --- イベント一覧セクション（新デザイン / 画像なし） --- */
-/* --- イベント一覧セクション（最終修正版） --- */
+/* イベント一覧セクション */
 #event-list {
-    padding: 80px 20px; /* 左右の余白を少し確保 */
+    padding: 80px 20px;
     text-align: center;
     background-color: #f8f8f8;
 }
-
 #event-list h2 {
     font-size: 2.5em;
     color: #333;
@@ -183,7 +132,6 @@ nav ul li a:hover {
     position: relative;
     display: inline-block;
 }
-
 #event-list h2::after {
     content: '';
     display: block;
@@ -193,16 +141,13 @@ nav ul li a:hover {
     margin: 15px auto 0;
     border-radius: 2px;
 }
-
 .event-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 最小幅を調整 */
     gap: 30px;
     margin-top: 40px;
-    align-items: stretch; /* 高さを揃える */
+    align-items: stretch;
 }
-
-/* --- 各イベントカードのスタイル --- */
 .event-card {
     background-color: #fff;
     border-radius: 8px;
@@ -214,13 +159,10 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
 }
-
 .event-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-/* カード左の色の帯 */
 .event-card::before {
     content: '';
     position: absolute;
@@ -229,149 +171,150 @@ nav ul li a:hover {
     width: 10px;
     height: 100%;
 }
-
-/* カードごとに色を自動で変える */
-.event-card:nth-child(4n+1)::before { background-color: #4A90E2; } /* 青 */
-.event-card:nth-child(4n+2)::before { background-color: #34A853; } /* 緑 */
-.event-card:nth-child(4n+3)::before { background-color: #EA4335; } /* 赤 */
-.event-card:nth-child(4n+4)::before { background-color: #FBBC05; } /* 黄 */
-
-/* カードのコンテンツ部分 */
+.event-card:nth-child(4n+1)::before { background-color: #4A90E2; }
+.event-card:nth-child(4n+2)::before { background-color: #34A853; }
+.event-card:nth-child(4n+3)::before { background-color: #EA4335; }
+.event-card:nth-child(4n+4)::before { background-color: #FBBC05; }
 .event-content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* カード全体の高さを埋める */
-    
-    /* ★★★これが重要★★★ */
-    margin-left: 10px; /* 帯の幅だけマージンを確保 */
-    padding: 30px 30px 30px 20px; /* 内側の余白（左だけ少し小さめ） */
-    box-sizing: border-box; /* paddingとwidthの計算を調整 */
+    flex-grow: 1;
+    margin-left: 10px;
+    padding: 30px 30px 30px 20px;
+    box-sizing: border-box;
 }
-
 .event-content h3 {
     font-size: 1.6em;
     margin-top: 0;
     margin-bottom: 10px;
     color: #222;
 }
-
 .event-meta {
     font-size: 0.9em;
     color: #777;
     margin-bottom: 20px;
 }
-
 .event-description {
     font-size: 1em;
     margin-bottom: 25px;
-    flex-grow: 1; /* この要素を伸ばしてボタンを一番下に配置 */
+    flex-grow: 1;
 }
-
 .event-content .btn-secondary {
     align-self: flex-start;
     margin-top: auto;
 }
-/* 詳細を見るボタン */
-.event-content .btn-secondary {
-    align-self: flex-start;
-    margin-top: auto; /* 自動で上に余白を作り一番下に配置 */
-}
-/* ... 続くイベントカードのスタイル ... */
-/* --- 動く帯（マーキー） --- */
+
+/* 動く帯 */
 .marquee-container {
     width: 100%;
     overflow: hidden;
-    background-color: #222; /* ヘッダーの色に合わせて濃いグレーに */
+    background-color: #222;
     padding: 12px 0;
     border-bottom: 1px solid #444;
 }
-
-/* 動かす要素全体を囲むラッパー */
 .marquee-content {
     display: flex;
     width: fit-content;
     animation: marquee 25s linear infinite;
 }
-
-/* 動かす個々の要素 */
 .marquee-content a {
     display: block;
     margin: 0 20px;
     flex-shrink: 0;
-    color: #fff; /* 文字色を白に */
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
     white-space: nowrap;
     transition: color 0.3s;
 }
-
-.marquee-content a:hover {
-    color: #4A90E2; /* ホバー時の色をアクセントカラーに */
-}
-
-/* アニメーションの定義 */
+.marquee-content a:hover { color: #4A90E2; }
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
+.marquee-container:hover .marquee-content { animation-play-state: paused; }
 
-/* マウスが乗ったら動きを止める */
-.marquee-container:hover .marquee-content {
-    animation-play-state: paused;
-}
-/* --- イベントカレンダー --- */
+/* カレンダー */
 #calendar {
     padding: 60px 0;
-    background-color: #f9f9f9; /* 背景色を少し変える */
+    background-color: #f9f9f9;
     text-align: center;
 }
-
 .calendar-wrapper {
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 75%; /* iframeのアスペクト比を維持 (高さ/幅 * 100) */
+    padding-bottom: 75%;
     margin-top: 20px;
     overflow: hidden;
 }
-
 .calendar-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid #ddd; /* カレンダーに枠線をつける */
-}
-/* --- イベントタグのスタイル --- */
-.event-tags {
-    margin-bottom: 20px; /* ボタンとの間隔を調整 */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px; /* タグ同士の間隔 */
+    border: 1px solid #ddd;
 }
 
+/* タグ */
+.event-tags {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
 .tag {
     display: inline-block;
     padding: 5px 12px;
     font-size: 0.8rem;
     font-weight: bold;
-    border-radius: 15px; /* 角を丸くしてカプセル状に */
+    border-radius: 15px;
     color: #fff;
 }
+.tag-beginner { background-color: #34A853; }
+.tag-advanced { background-color: #EA4335; }
+.tag-free-battle { background-color: #4A90E2; }
+.tag-tournament { background-color: #795548; }
+.tag-koryu { background-color: springgreen; }
+.tag-Intermediate{ background-color: #FBBC05; }
+.tag-city{ background-color: #333; }
+.tag-Swissdraw{ background-color: #357ABD; }
 
-/* タグごとの色分け（例） */
-.tag-beginner { background-color: #34A853; } /* 緑: 初心者歓迎 */
-.tag-advanced { background-color: #EA4335; } /* 赤: 上級者向け */
-.tag-free-battle { background-color: #4A90E2; } /* 青: フリー対戦 */
-.tag-tournament { background-color: #795548; } /* 茶: 大会形式 */
-.tag-koryu { background-color: springgreen;}/*交流会：明るい緑*/
-.tag-Intermediate{ background-color: #FBBC05;}/*中級*/
-.tag-city{ background-color: #333;}/*シティリーグ*/
-.tag-Swissdraw{ background-color: #357ABD;}/*濃い青：スイス*/
+/* --------------------------------
+  ★★★ スマートフォン表示用の設定 ★★★
+----------------------------------- */
+@media (max-width: 768px) {
+    #hero {
+        min-height: 70vh; /* スマホでは高さを少し抑える */
+    }
+    #hero h1 {
+        font-size: 2.2em; /* 文字サイズを調整 */
+    }
+    #hero p {
+        font-size: 1.1em; /* 文字サイズを調整 */
+    }
+    #hero .btn-primary {
+        font-size: 1em;
+        padding: 12px 30px;
+    }
+    #event-list {
+        padding: 60px 15px;
+    }
+    #event-list h2 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+    .event-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 最小幅を調整 */
+        gap: 20px;
+    }
+    .event-content {
+        padding: 25px 25px 25px 15px;
+    }
+    .event-content h3 {
+        font-size: 1.3em;
+    }
+}

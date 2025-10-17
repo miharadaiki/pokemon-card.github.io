@@ -1,10 +1,10 @@
-/* --- 全体のスタイル --- */
+/* deck.css */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: #f0f4f8;
     color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 0; /* bodyのpaddingは0に */
 }
 .container {
     max-width: 1000px;
@@ -14,8 +14,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     margin-top: 80px;
+    box-sizing: border-box; /* paddingを幅に含める */
 }
-
 h1 {
     border-bottom: 3px solid #FFCB05;
     padding-bottom: 10px;
@@ -27,14 +27,11 @@ h1 {
     color: #555;
     margin-bottom: 30px;
 }
-
-/* --- デッキ紹介のセクション --- */
 .deck-showcase {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
-
 .deck-card {
     border-radius: 12px;
     text-align: center;
@@ -46,23 +43,19 @@ h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .deck-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 25px -5px rgba(42, 117, 187, 0.1), 0 10px 10px -5px rgba(42, 117, 187, 0.08);
 }
-
 .deck-card img {
     max-width: 100%;
     height: 180px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
 .deck-card:hover img {
     transform: scale(1.05);
 }
-
 .deck-card h3 {
     margin: 15px 0 10px 0;
     color: #2A75BB;
@@ -75,8 +68,6 @@ h1 {
     padding: 0 15px 20px 15px;
     margin: 0;
 }
-
-/* --- 画像の上に表示するオーバーレイのスタイル --- */
 .card-overlay {
     position: absolute;
     bottom: 0;
@@ -90,11 +81,9 @@ h1 {
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
-
 .deck-card:hover .card-overlay {
     transform: translateY(0);
 }
-
 .overlay-link {
     width: 100%;
     color: #fff;
@@ -109,14 +98,30 @@ h1 {
     box-sizing: border-box;
     transition: background-color 0.2s;
 }
-
 .overlay-link:hover {
     background-color: #2A75BB;
 }
-
-/* ★★★ ここの指定方法を修正しました ★★★ */
 .overlay-link .link-icon {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
+}
+
+/* --------------------------------
+  ★★★ スマートフォン表示用の設定 ★★★
+----------------------------------- */
+@media (max-width: 768px) {
+    body {
+        padding: 0; /* bodyのpaddingをなくす */
+    }
+    .container {
+        padding: 20px 15px; /* コンテナの左右の余白を小さく */
+        margin-top: 70px; /* ヘッダーの高さに合わせて調整 */
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .deck-showcase {
+        gap: 20px;
+    }
 }

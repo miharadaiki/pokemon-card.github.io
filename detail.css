@@ -1,68 +1,53 @@
-
-/* --- 全体的な設定 --- */
+/* detail.css */
 body {
     font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f8f8f8; /* 全体の背景色を少し明るく */
+    background-color: #f8f8f8;
     margin: 0;
     padding: 0;
 }
-
 .container {
-    max-width: 1200px; /* コンテンツの最大幅 */
-    margin: 0 auto; /* 中央寄せ */
-    padding: 0 20px; /* 左右の余白 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-/* --- ボタンの共通スタイル --- */
 .btn-primary, .btn-secondary, .btn-ghost {
     display: inline-block;
     padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease; /* ホバー時のアニメーション */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .btn-primary {
-    background-color: #4A90E2; /* 青系のアクセントカラー */
+    background-color: #4A90E2;
     color: #fff;
     border: 2px solid #4A90E2;
 }
-
 .btn-primary:hover {
     background-color: #357ABD;
     border-color: #357ABD;
 }
-
 .btn-secondary {
     background-color: #fff;
     color: #555;
     border: 1px solid #ddd;
 }
-
-.btn-secondary:hover {
-    background-color: #f0f0f0;
-}
-
+.btn-secondary:hover { background-color: #f0f0f0; }
 .btn-ghost {
     background-color: transparent;
-    color: #4A90E2; /* 青系のアクセントカラー */
+    color: #4A90E2;
     border: 1px solid #4A90E2;
 }
-
 .btn-ghost:hover {
     background-color: #4A90E2;
     color: #fff;
 }
-
-
-/* --- ヘッダー（色を反転） --- */
 header {
-    background-color: #333; /* 背景色を濃いグレーに */
+    background-color: #333;
     padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を少し濃く */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,49 +55,27 @@ header {
     top: 0;
     z-index: 1000;
 }
-
-#logo img {
-    height: 50px; /* ロゴの高さ */
-    /* もしロゴが黒文字の場合は、白文字のロゴ画像に差し替えることを検討してください */
-    /* 例: filter: invert(100%); を適用すると色を反転できますが、画像全体に適用されるため注意 */
-}
-
-/* ナビゲーションメニューのスタイル */
+#logo img { height: 50px; }
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
-
 nav ul li a {
     text-decoration: none;
-    color: #fff; /* 文字色を白に */
+    color: #fff;
     padding: 10px 15px;
     display: block;
     font-weight: bold;
     transition: color 0.3s ease;
 }
-
-nav ul li a:hover {
-    color: #4A90E2; /* 青系のホバー時の色（これはそのまま） */
-}
-
-/* ハンバーガーメニュー（モバイル用、ここでは非表示） */
-.hamburger {
-    display: none; /* デスクトップでは非表示 */
-}
-#logo img {
-    height: 50px; /* ロゴの高さ */
-}
-/* --------------------------------
-  下層ページの共通スタイル
------------------------------------ */
+nav ul li a:hover { color: #4A90E2; }
+.hamburger { display: none; }
 .page-main {
-    padding-top: 80px; /* 固定ヘッダー分のスペース */
+    padding-top: 80px;
     padding-bottom: 60px;
 }
-
 .page-title-container {
     background-color: #005f99;
     color: #fff;
@@ -120,47 +83,36 @@ nav ul li a:hover {
     padding: 40px 20px;
     margin-bottom: 40px;
 }
-
 .page-title-container h1 {
     margin: 0;
     font-size: 2.5rem;
 }
-
-
-/* --------------------------------
-  イベント詳細ページのスタイル
------------------------------------ */
 .event-detail-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
-
 .event-detail-header {
     border-bottom: 2px solid #eee;
     margin-bottom: 30px;
     padding-bottom: 20px;
 }
-
 .event-detail-header h2 {
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 10px;
 }
-
 .event-date {
     font-size: 1.1rem;
     color: #555;
     font-weight: bold;
 }
-
 .event-image {
     width: 100%;
     height: auto;
     margin-bottom: 30px;
     border-radius: 8px;
 }
-
 .event-detail-body h3 {
     font-size: 1.5rem;
     border-left: 5px solid #005f99;
@@ -168,61 +120,90 @@ nav ul li a:hover {
     margin-top: 40px;
     margin-bottom: 20px;
 }
-
 .event-summary-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 30px;
 }
-
 .event-summary-table th,
 .event-summary-table td {
     border: 1px solid #ccc;
     padding: 15px;
     text-align: left;
 }
-
 .event-summary-table th {
     background-color: #f2f2f2;
     font-weight: bold;
     width: 120px;
 }
-
 .event-apply-button-container {
     text-align: center;
     margin-top: 30px;
 }
-/* --- イベント詳細：情報パネルのスタイル --- */
 .event-info-panel {
-    background-color: #ffffff; /* パネルの背景色 */
-    border-left: 5px solid #4A90E2; /* 左側のアクセントボーダー */
+    background-color: #ffffff;
+    border-left: 5px solid #4A90E2;
     padding: 25px 30px;
     margin-bottom: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* ほんの少し影をつける */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-
 .event-info-panel h2 {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 2.2rem;
 }
-
 .event-info-item {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
-
 .event-info-item .icon {
     font-size: 1.5rem;
     margin-right: 15px;
-    width: 30px; /* アイコンの幅を固定 */
+    width: 30px;
     text-align: center;
 }
-
 .event-info-item .text {
     font-weight: bold;
     color: #333;
+}
+
+/* --------------------------------
+  ★★★ スマートフォン表示用の設定 ★★★
+----------------------------------- */
+@media (max-width: 768px) {
+    .page-main {
+        padding-top: 70px;
+    }
+    .page-title-container {
+        padding: 30px 15px;
+    }
+    .page-title-container h1 {
+        font-size: 1.8rem;
+    }
+    .event-detail-container {
+        padding: 0 15px;
+    }
+    .event-detail-header h2 {
+        font-size: 1.6rem;
+    }
+    .event-detail-body h3 {
+        font-size: 1.3rem;
+    }
+    .event-summary-table th,
+    .event-summary-table td {
+        padding: 10px; /* テーブルの余白を小さく */
+        font-size: 0.9rem; /* 文字を少し小さく */
+    }
+    .event-summary-table th {
+        width: 100px; /* 見出しの幅を調整 */
+    }
+    .event-info-panel {
+        padding: 20px;
+    }
+    .event-info-panel h2 {
+        font-size: 1.6rem;
+    }
 }
