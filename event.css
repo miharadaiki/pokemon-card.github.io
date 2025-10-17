@@ -71,7 +71,29 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 nav ul li a:hover { color: #4A90E2; }
-.hamburger { display: none; }
+
+/* ★★★ ここからハンバーガーメニューのスタイルを追加 ★★★ */
+.hamburger {
+    display: none; /* PCでは非表示 */
+    position: absolute;
+    top: 25px; /* 位置を調整 */
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    z-index: 1001; /* ロゴや他の要素より手前に */
+}
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+/* ★★★ ここまで ★★★ */
 
 /* ヒーローセクション */
 #hero {
@@ -143,7 +165,7 @@ nav ul li a:hover { color: #4A90E2; }
 }
 .event-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 最小幅を調整 */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-top: 40px;
     align-items: stretch;
@@ -287,14 +309,40 @@ nav ul li a:hover { color: #4A90E2; }
   ★★★ スマートフォン表示用の設定 ★★★
 ----------------------------------- */
 @media (max-width: 768px) {
+    /* ヘッダーの調整 */
+    header #logo {
+        margin-right: auto; /* ロゴを左に寄せる */
+    }
+    .hamburger {
+        display: block; /* ハンバーガーメニューを表示 */
+    }
+    nav ul {
+        display: none; /* PC用のメニューを非表示 */
+        flex-direction: column;
+        position: absolute;
+        top: 78px; /* ヘッダーの高さ分下げる */
+        right: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+    }
+    nav ul.active {
+        display: flex; /* activeクラスがついたら表示 */
+    }
+    nav ul li a {
+        padding: 15px 0;
+        border-top: 1px solid #444;
+    }
+
+    /* ヒーローセクションの調整 */
     #hero {
-        min-height: 70vh; /* スマホでは高さを少し抑える */
+        min-height: 70vh;
     }
     #hero h1 {
-        font-size: 2.2em; /* 文字サイズを調整 */
+        font-size: 2.2em;
     }
     #hero p {
-        font-size: 1.1em; /* 文字サイズを調整 */
+        font-size: 1.1em;
     }
     #hero .btn-primary {
         font-size: 1em;
@@ -308,7 +356,7 @@ nav ul li a:hover { color: #4A90E2; }
         margin-bottom: 40px;
     }
     .event-cards {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 最小幅を調整 */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
     }
     .event-content {
