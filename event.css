@@ -376,3 +376,10 @@ nav ul li a:hover {
         font-size: 1.3em;
     }
 }
+/* --- 現在のページをヘッダーで示すスタイル --- */
+#page-event .nav-event a,
+#page-organizer .nav-organizer a,
+#page-deck .nav-deck a {
+    color: #4A90E2; /* アクティブなメニュー項目の色を青に */
+    font-weight: bold;
+}

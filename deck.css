@@ -125,3 +125,10 @@ h1 {
         gap: 20px;
     }
 }
+/* --- 現在のページをヘッダーで示すスタイル --- */
+#page-event .nav-event a,
+#page-organizer .nav-organizer a,
+#page-deck .nav-deck a {
+    color: #4A90E2; /* アクティブなメニュー項目の色を青に */
+    font-weight: bold;
+}
